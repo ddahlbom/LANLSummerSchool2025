@@ -1,11 +1,12 @@
 # LANLSummerSchool2025
 
+This repo contains a number of very simple [Sunny](https://github.com/SunnySuite/Sunny.jl) scripts illustrating points mentioned in the lecture, "A Brief introduction to Classical and Semiclassical Spin Dynamics," given at the Computational Condensed Matter Summer School hosted by Los Alamos National Laboratory in June, 2025.
+
+## Executing example
 This code base is using the [Julia Language](https://julialang.org/) and
 [DrWatson](https://juliadynamics.github.io/DrWatson.jl/stable/)
 to make a reproducible scientific project named
 > LANLSummerSchool2025
-
-It is authored by ddahlbom.
 
 To (locally) reproduce this project, do the following:
 
