@@ -30,6 +30,7 @@ print_symmetry_table(crystal, 1.5)
 set_exchange!(sys, Jnn,  Bond(6, 1, [0, 0, 0]))
 set_exchange!(sys, Jnnn, Bond(3, 5, [0, 0, 0]))
 
+# Execute repeatedly to find many different local minima with similar energies.
 randomize_spins!(sys)
 minimize_energy!(sys)
 energy_per_site(sys)

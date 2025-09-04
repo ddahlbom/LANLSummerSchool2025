@@ -46,17 +46,17 @@ res_sf = intensities_static(sssf, grid)
 plot_intensities(res_sf)
 
 
-# ################################################################################
-# # Dynamic SF
-# ################################################################################
-# energies = range(0, 20, 201)
-# dssf = SampledCorrelations(sys; dt, energies, measure=ssf_trace(sys))
-# 
-# for _ in 1:100
-#     step!(sys, integrator)
-# end
-# 
-# @time add_sample!(dssf, sys)
-# path = q_space_path(crystal, [[-1/2, 0, 0], [0, 0, 0], [1/2, 0, 0], [1/2, 1/2, 0], [0, 0, 0]], 300)
-# res = intensities(dssf, path; energies=energies[1:end-1], kT)
-# plot_intensities(res)
+################################################################################
+# Dynamic SF
+################################################################################
+energies = range(0, 20, 201)
+dssf = SampledCorrelations(sys; dt, energies, measure=ssf_trace(sys))
+
+for _ in 1:100
+    step!(sys, integrator)
+end
+
+@time add_sample!(dssf, sys)
+path = q_space_path(crystal, [[-1/2, 0, 0], [0, 0, 0], [1/2, 0, 0], [1/2, 1/2, 0], [0, 0, 0]], 300)
+res = intensities(dssf, path; energies=energies[1:end-1], kT)
+plot_intensities(res)
